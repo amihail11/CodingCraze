@@ -1,45 +1,47 @@
 class Stack:
+    stack: list
+
     def __init__(self):
         self.stack = []
 
-    def push_stack(self):
-        item1 = input("Insert a value or press 'Enter' for exit: ")
-        item2 = input("Insert a value or press 'Enter' for exit: ")
-        item3 = input("Insert a value or press 'Enter' for exit: ")
+    def push(self):
+        item1 = input("Insert a value: ")
+        item2 = input("Insert a value: ")
+        item3 = input("Insert a value: ")
         self.stack.append(item1)
         self.stack.append(item2)
         self.stack.append(item3)
         return self.stack
-                            
-    def pop_stack(self):
+
+    def pop(self):
         self.stack.pop()
         return self.stack
-    
-    def remove_items(self):
-        for i in range(len(self.stack)):
-            if i is None:
-                break
-            else:
-                self.stack.pop()
-                i = i-1
-        return self.stack
-               
-    
-stack_class = Stack()
 
-        
-def start_class():
-    stack_class.push_stack()
-    print(stack_class.stack)
-    stack_class.pop_stack()
-    print(stack_class.stack)
-    print(len(stack_class.stack))
-    stack_class.remove_items()
-    print(stack_class.stack)
+    def clear(self):
+        for _ in range(len(self.stack)):
+            self.stack.pop()
+        return self.stack
+
+    def clear_rev(self):
+        for _ in reversed(self.stack):
+            self.stack.pop()
+        return self.stack
+
+
+def process_stack():
+    pStack = Stack()
+    pStack.push()
+    print(pStack.stack)
+    pStack.pop()
+    print(pStack.stack)
+    print(len(pStack.stack))
+    pStack.clear()
+    print(pStack.stack)
 
 
 def main():
-    start_class()
+    process_stack()
+
 
 if __name__ == "__main__":
     main()
