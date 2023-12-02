@@ -6,7 +6,7 @@ class Stack:
 
     def push(self):
         while True:
-            item = input("Insert a value: ")
+            item = input("Insert a value or press Enter for exit: ")
             if item != '':            
                 self.stack.append(item)
             else:
@@ -18,8 +18,7 @@ class Stack:
         return self.stack
 
     def clear(self):
-        for _ in range(len(self.stack)):
-            self.stack.pop()
+        self.stack.clear()
         return self.stack
 
 
