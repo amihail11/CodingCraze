@@ -5,12 +5,12 @@ class Stack:
         self.stack = []
 
     def push(self):
-        item1 = input("Insert a value: ")
-        item2 = input("Insert a value: ")
-        item3 = input("Insert a value: ")
-        self.stack.append(item1)
-        self.stack.append(item2)
-        self.stack.append(item3)
+        while True:
+            item = input("Insert a value: ")
+            if item != '':            
+                self.stack.append(item)
+            else:
+                break
         return self.stack
 
     def pop(self):
@@ -22,25 +22,23 @@ class Stack:
             self.stack.pop()
         return self.stack
 
-    def clear_rev(self):
-        for _ in reversed(self.stack):
-            self.stack.pop()
-        return self.stack
+
+ex1 = Stack()
+ex2 = Stack()
 
 
-def process_stack():
-    pStack = Stack()
-    pStack.push()
-    print(pStack.stack)
-    pStack.pop()
-    print(pStack.stack)
-    print(len(pStack.stack))
-    pStack.clear()
-    print(pStack.stack)
+ex1.push()
+print('Стэк 1: ', ex1.stack)
+ex1.pop()
+print('Стэк 1: ', ex1.stack)
+ex1.clear()
+print('Стэк 1: ', ex1.stack)
+ex2.push()
+print('Стэк 2: ', ex2.stack)
 
 
 def main():
-    process_stack()
+    pass
 
 
 if __name__ == "__main__":
