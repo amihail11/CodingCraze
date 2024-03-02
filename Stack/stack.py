@@ -1,39 +1,49 @@
 class Stack:
-    stack: list
+    """Описание класса стэка"""
 
-    def __init__(self):
-        self.stack = []
+    stack:list
+    
+    def __init__(self, stack=[], value=None) -> None:
+        """инициализирует атрибуты класса"""
+        self.stack = stack
+        self.value = value
 
-    def push(self):
-        while True:
-            item = input("Insert a value or press Enter for exit: ")
-            if item != '':            
-                self.stack.append(item)
-            else:
-                break
+    def push(self) -> list:
+        """добавляет значение в список"""
+        self.stack.append(self.value)
         return self.stack
-
-    def pop(self):
+    
+    def pop(self) -> list:
+        """удаляет последний элемент списка"""
         self.stack.pop()
         return self.stack
-
-    def clear(self):
+    
+    def show_length(self) -> None:
+        """выводит длину списка"""
+        print(len(self.stack))
+    
+    def clear(self) -> list:
+        """очищает список"""
         self.stack.clear()
         return self.stack
+    
+    def print(self) -> None:
+        """выводит список на экран"""
+        print(self.stack)
 
-
-ex1 = Stack()
-ex2 = Stack()
-
-
-ex1.push()
-print('Стэк 1: ', ex1.stack)
-ex1.pop()
-print('Стэк 1: ', ex1.stack)
-ex1.clear()
-print('Стэк 1: ', ex1.stack)
-ex2.push()
-print('Стэк 2: ', ex2.stack)
+ex = Stack(value=345)
+ex.push()
+ex = Stack(value=1.234)
+ex.push()
+ex.print()
+ex = Stack(value='ad234')
+ex.push()
+ex.print()
+ex.show_length()
+ex.pop()
+ex.print()
+ex.clear()
+ex.print()
 
 
 def main():
